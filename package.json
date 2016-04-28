@@ -1,0 +1,27 @@
+{
+  "name": "rage4service",
+  "version": "1.0.0",
+  "description": "Promise-based communication with Rage4 API",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rage4",
+    "dns",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/proux/rage4service.git"
+  },
+  "author": "Nico Lindemann <nico.lindemann@proux.net>",
+  "license": "MIT",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request-promise": "^2.0.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  }
+}
