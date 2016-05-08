@@ -1,5 +1,8 @@
 'use strict'
 
+rp = require('request-promise')
+querystring = require('querystring')
+
 ###*
 # @typedef Domain
 # @property {integer} id          - ID
@@ -19,8 +22,6 @@
 ###
 
 rage4service = ->
-  rp = require('request-promise')
-  querystring = require('querystring')
   query = (action, params) ->
     rp
       uri: 'https://secure.rage4.com/RAPI/' + action +
