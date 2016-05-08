@@ -35,6 +35,6 @@
     }
   },
   "release": {
-    "generateNotes": "./node_modules/@semantic-release/release-notes-generator/dist",
+    "generateNotes": "./node_modules/@semantic-release/release-notes-generator/dist"
   }
 }
