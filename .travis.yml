@@ -2,25 +2,29 @@ sudo: false
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: false
 node_js:
-  - '4'
-  - iojs-v3
-  - iojs-v2
-  - iojs-v1
-  - '0.12'
-  - '0.10'
+- '4'
+- iojs-v3
+- iojs-v2
+- iojs-v1
+- '0.12'
+- '0.10'
 before_install:
-  - npm i -g npm@^2.0.0
+- npm i -g npm@^2.0.0
 before_script:
-  - npm prune
+- npm prune
 after_success:
-  - 'curl -Lo travis_after_all.py https://git.io/travis_after_all'
-  - python travis_after_all.py
-  - export $(cat .to_export_back) &> /dev/null
-  - npm run semantic-release
+- curl -Lo travis_after_all.py https://git.io/travis_after_all
+- python travis_after_all.py
+- export $(cat .to_export_back) &> /dev/null
+- npm run semantic-release
 branches:
   except:
-    - /^v\d+\.\d+\.\d+$/
+  - /^v\d+\.\d+\.\d+$/
+env:
+  global:
+  - secure: GBETCAn06SM50Q7QpJgYxT7SCpqrtE5Wqsvkp3IAw48fQIVaTtYgXONmO/1XaM2yuCYUPuT/81hV1mqzZFvXdBSySkCNCGYWo3ITyze2xhztZcGMLhnPGJ2eAwRJgl9eF3jMEs6GXnXIN2lySMsU+z4evE/HxamnSYEBdl3agZvXRO5s9yjWoZdzeGkzdyq/+k1aqxwHSoJlpXPsWO5loRC9LH2+DE/krDsHzWFq39zBFvmxcbm81afeTD2IztJRxbPu6glD1LbpvVOwHrddQnHhNo5OlCITq4OnFK5UbigP4mFn5bNszS//Cygsm861XdBtmt1mzbgfPQfrEWaXWNN+Q6Rs961ffZUGRWBhZ00RXy6Jgl+uXQH7dCqxoQf8UyT9POnKzdSufy1l05eMNoi6yFfcbQgzlmNPx3H9Uu59xrfmeGxw0PX7n1mbKiKF4tJ0Q7Y1G8abiqVIzMO4rCrfm2kJaG/PtiIwoM3osgnLOgcVr2hL0nCwskz8Y1aVoU6BpYQcYesNwwfyGjBFFSbuNdeGUsu1F2Efmpi0+msa/E2Cy73BHZ9OzrkJhx1ibGCeOESCpNbnWwkDYrHzSlckru9QL3DxRWOTJu0KxeYQfoIsHHFIAiZHhG4YkH8Lwc5SM92koZb19ZGd0GbHaUAuVKaJa8LhksanhbhFAOs=
+  - secure: hIW4Dp59uU56vU7DTmRKcdMMQgrIOLm0MkTDsOuLrMOLP6I6tUo6fZZepi1tKtAsubJT+BjW4qjwLP6moySvtH1ZptANjX0Vexc9RvIEzt0gbGBFXt3E5dtdxedSoC0et4qutcjrWfDqE0fJLuySLrVaHDZ/UWoC2Q+8PFdMkvzJFhgoitFDq8NqItRhSlyz/uFC4SCEf4pDYCRykwVbxktKQE7YC9lLga3iTg9k+3624Srs4qHUh6P03zn6NlObzTTJqmBhpRoejeWreo6tRF5CN7ivgJZTGsOQoUaRYIDzoBb2r/qcAZG7kQF+KCq/q95EYxklABbVzunjCUKTdWdU1ICDgrSQCHWvDekF0tEWUQmIbjcyS4wnJtWz7P+03YjM1zYwlBGZ4z0iXZnttgVY2F3Dzz5OBtOSd4DlYJkyrAxODtjbMC3R3xClHmkiaSjHa/OcjkCNJharhqAH46bfpsDOdZ9b36Ah+hYumEkacqCwqcOXrTOIA3l53e/3GbgncFMJXisxoYNRKugACGWpLBYx7K8wYsNxm+JmK1wCtPb86yXuz4DyiwtfWPhkB/PhwzCqPXcpNtZUM+KXFIsfufdzXdDj2gxxy/NndluU4ICuOgKPN9NnewnAzBzGQLRHqsu2twCkDFMEzdKYLPyueyatPUlfnE6BF3Cgrhk=
