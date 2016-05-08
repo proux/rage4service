@@ -157,6 +157,17 @@ rage4service = ->
     ###
     syncdomain: (params) ->
       query 'syncdomain', params
+
+    ###*
+    # Sync slave zone to specific Shadow Master server
+    # @param {object}  params
+    # @param {string}  params.name   - Domain's name
+    # @param {string}  params.server - Shadow master's IPv4 address
+    # @param {boolean} params.dnssec - Enable DNSSEC
+    # @return {ApiResponse} Reponse
+    ###
+    syncslavedomain: (params) ->
+      query 'syncslavedomain', params
   }
 
 module.exports = rage4service()
