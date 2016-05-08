@@ -20,7 +20,6 @@
   "author": "Nico Lindemann <nico.lindemann@proux.net>",
   "license": "MIT",
   "dependencies": {
-    "querystring": "^0.2.0",
     "request-promise": "^3.0.0"
   },
   "devDependencies": {
