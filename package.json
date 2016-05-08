@@ -4,7 +4,9 @@
   "main": "./lib/index.js",
   "scripts": {
     "pretest": "./node_modules/coffee-script/bin/coffee --compile --bare --no-header --output lib/ src/index.coffee",
-    "test": "./node_modules/coffeelint/bin/coffeelint src/index.coffee",
+    "test": "npm run lint && npm run mocha",
+    "mocha": "./node_modules/mocha/bin/mocha -R spec",
+    "lint": "./node_modules/coffeelint/bin/coffeelint src/index.coffee",
     "prepublish": "./node_modules/coffee-script/bin/coffee --compile --bare --no-header --output lib/ src/index.coffee",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -24,9 +26,11 @@
   },
   "devDependencies": {
     "@semantic-release/release-notes-generator": "^2.0.0",
+    "chai": "^3.5.0",
     "coffee-script": "^1.10.0",
     "coffeelint": "^1.15.7",
     "cz-conventional-changelog": "^1.1.6",
+    "mocha": "^2.4.5",
     "semantic-release": "^4.3.5"
   },
   "config": {
