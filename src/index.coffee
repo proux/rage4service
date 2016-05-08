@@ -145,6 +145,17 @@ rage4service = ->
     ###
     importdomainext: (params) ->
       query 'importdomainext', params
+
+    ###*
+    # Sync zone to specific Shadow Master server
+    # @param {object}  params
+    # @param {string}  params.name   - Domain's name
+    # @param {string}  params.server - Shadow master's IPv4 address
+    # @param {boolean} params.dnssec - Enable DNSSEC
+    # @return {ApiResponse} Reponse
+    ###
+    syncdomain: (params) ->
+      query 'syncdomain', params
   }
 
 module.exports = rage4service()
