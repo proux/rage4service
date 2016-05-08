@@ -1,3 +1,5 @@
+* [[`90bc1f49a4`](https://github.com/proux/rage4service/commit/90bc1f49a4)] - chore(Changelog): Fix changelog creation (Nico Lindemann) 
+* [[`19ff5cb635`](https://github.com/proux/rage4service/commit/19ff5cb635)] - chore(changelog): Genereate changelog on npm test (Nico Lindemann) 
 * [[`f90e80a603`](https://github.com/proux/rage4service/commit/f90e80a603)] - chore(package): update dependencies (greenkeeperio-bot) 
 * [[`645b968934`](https://github.com/proux/rage4service/commit/645b968934)] - chore(Semver): Add CI, Use semver, Add Changelog, etc. (Nico Lindemann) 
 * [[`47b15572da`](https://github.com/proux/rage4service/commit/47b15572da)] - Init (Nico Lindemann) 
