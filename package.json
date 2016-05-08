@@ -5,7 +5,7 @@
   "scripts": {
     "test": "./node_modules/coffeelint/bin/coffeelint src/index.coffee",
     "prepublish": "./node_modules/coffee-script/bin/coffee --compile --bare --no-header --output lib/ src/index.coffee",
-    "preversion": "changelog-maker > CHANGELOG.md",
+    "posttest": "changelog-maker --all > CHANGELOG.md",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
