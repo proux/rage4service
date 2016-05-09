@@ -15,10 +15,41 @@ querystring = require('querystring')
 ###
 
 ###*
+# @typedef Record
+# @property {integer} id
+# @property {string} name
+# @property {string} content
+# @property {string} type
+# @property {integer} ttl
+# @property {integer} priority
+# @property {integer} domain_id
+# @property {integer} geo_region_id
+# @property {double} geo_lat
+# @property {double} geo_long
+# @property {booelan} failover_enabled
+# @property {booelan} failover_active
+# @property {string} failover_content
+# @property {booelan} failover_withdraw
+# @property {integer} webhook_id
+# @property {booelan} is_active
+# @property {boolean} udp_limit
+###
+
+###*
 # @typedef ApiResponse
 # @property {boolean} status - Response Status
 # @property {integer} id     - ID
 # @property {string} error   - Error Message
+###
+
+###*
+# @typedef SecureKey
+# @property {integer} keytag   - Key tag
+# @property {string} key       - Key
+# @property {string} algorithm - Algorithm
+# @property {string} rsasha1   - RSA SHA1 Hash
+# @property {string} rsasha256 - RSA SHA256 Hash
+# @property {string} dnskey    - DNS Key
 ###
 
 rage4service = ->
@@ -168,6 +199,88 @@ rage4service = ->
     ###
     syncslavedomain: (params) ->
       query 'syncslavedomain', params
+
+    ###*
+    # Export BIND compatible zone file
+    # @param {object}  params
+    # @param {string}  params.id   - Domain's ID
+    # @return {string} Reponse
+    ###
+    exportzonefile: (params) ->
+      query 'exportzonefile', params
+
+    ###*
+    # Get DNSSEC details
+    # @param {object}  params
+    # @param {string}  params.id   - Domain's ID
+    # @return {SecureKey} Reponse
+    ###
+    getdnssecinfo: (params) ->
+      query 'getdnssecinfo', params
+
+    ###*
+    # Enable DNSSEC
+    # @param {object}  params
+    # @param {string}  params.id   - Domain's ID
+    # @return {SecureKey} Reponse
+    ###
+    enablednssec: (params) ->
+      query 'enablednssec', params
+
+    ###*
+    # Disable DNSSEC
+    # @param {object}  params
+    # @param {string}  params.id   - Domain's ID
+    # @return {ApiResponse} Reponse
+    ###
+    disablednssec: (params) ->
+      query 'disablednssec', params
+
+    ###*
+    # List records
+    # @param {object}  params
+    # @param {string}  params.id   - Domain's ID
+    # @param {string}  params.name - Record's name
+    # @return {Array.<Record>} Reponse
+    ###
+    getrecords: (params) ->
+      query 'getrecords', params
+
+    ###*
+    # Get record by id
+    # @param {object}  params
+    # @param {string}  params.id   - Record's ID
+    # @return {Record} Reponse
+    ###
+    getrecord: (params) ->
+      query 'getrecord', params
+
+    ###*
+    # Create record
+    # @param {object} params
+    # @param {integer} params.id               - Domain's ID
+    # @param {string} params.name
+    # @param {string} params.content
+    # @param {string} params.type
+    # @param {integer} params.ttl
+    # @param {integer} params.priority
+    # @param {boolean} params.active
+    # @param {integer} params.geozone          -
+    # @param {boolean} params.geolock          -
+    # @param {double} params.geolat            -
+    # @param {double} params.geolong           -
+    # @param {booelan} params.failover         -
+    # @param {string} params.failovercontent   -
+    # @param {boolean} params.failoverwithdraw -
+    # @param {boolean} params.udplimit         -
+    # @param {boolean} selfResponse            - Self-Response
+    # @return {ApiResponse|Record} Response
+    ###
+    createrecord: (params, selfResponse) ->
+      if (selfResponse)
+        query 'createrecord2', params
+      else
+        query 'createrecord', params
   }
 
 module.exports = rage4service()
