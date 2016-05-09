@@ -22,7 +22,7 @@ after_success:
 - export $(cat .to_export_back) &> /dev/null
 - npm run semantic-release
 after_script:
-  - codeclimate-test-reporter < coverage/lcov.info
+  - ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
 branches:
   except:
   - /^v\d+\.\d+\.\d+$/
