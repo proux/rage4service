@@ -5,6 +5,8 @@ cache:
   - node_modules
 notifications:
   email: false
+  slack:
+    secure: WPmKf7xFXCGgY7Ssmp3/eyKhaCICQO1KGy37BSUyg+EVFXqzd4n3ImDgwNK05x9BNyzCKyj8fcgMtPfiWjKIzwDlqk+VlQAhktKfY6zfkSbRKoUWJMUUeJcQ+o8bv6769px09pYHlnXjeJLx8jhRZInU9sWfU+HZnIoF2j7zbfItb4jBUWCCzyASbAkWRScPky+iM4I76VZpyDglSGqsePeNR3w1D0InWe2hQ4XPJmrot3vdA92HSRbYdDyyr6u4lkU/xmZjs+k97souIifrT2yyRudHmZCVzuc1bCHexM0cLO4p9/SgIp+TFnjQwIbmLMr91JDMoUwC9Pth0WnzUU2bs8/X3gN5+pAH0vip9nEn3jCD3RP01CIVeS/A/U82exU1v1cy5xSS0AkDg9ubXk+qBx2MGrXHwCGrIb7fH28ArX8qXpRNfleL44JVjbHwwbKE3OOWzlgpnEFKctEBpMxcd6wy1N/V9NMh+w1hBTlpHtDguqn9VrJPOxKULgbKcV5QPQIAj+wHq+a+F7+FMf7kLJHOeK0/2de83fnTOMIERetZDs44D0O/TLAlUsN13LvomqiQfvR6kup8bdzeu55XgUs/I3GVB3k/p5eRerPzEwywnv2dC0QneL6dYuRXHQ+86DdysEQQawzKiS22s5s1vGsARt/IZ/EyO2fsd0Q=
 node_js:
 - '4'
 - iojs-v3
@@ -22,7 +24,7 @@ after_success:
 - export $(cat .to_export_back) &> /dev/null
 - npm run semantic-release
 after_script:
-  - ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
+- ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < coverage/lcov.info
 branches:
   except:
   - /^v\d+\.\d+\.\d+$/
@@ -31,5 +33,5 @@ env:
   - RAGE4_USERNAME: test@rage4service
   - RAGE4_PASSWORD: somepassword
 addons:
-    code_climate:
-        repo_token: a7b56684e9daf3d04ac1493b0db24360e5018cedc2d21a58d8cb7f8372805eea
+  code_climate:
+    repo_token: a7b56684e9daf3d04ac1493b0db24360e5018cedc2d21a58d8cb7f8372805eea
