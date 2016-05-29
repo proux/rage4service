@@ -149,7 +149,8 @@ rage4service = ->
     # @param {string} params.ns2        - Secondary NS name
     # @param {boolean} selfResponse     - Self-Response
     # @return {ApiResponse|Domain} Response
-    # @todo nsname, nsprefix
+    #
+    # TODO: nsname, nsprefix
     ###
     updatedomain: (params, selfResponse) ->
       if (selfResponse)
@@ -172,8 +173,9 @@ rage4service = ->
     # @param {string} params.name     - Domain's name
     # @param {string} params.nsname   - NS prefix
     # @param {string} params.nsprefix - NS suffix
-    # @todo Wrong description in API?
     # @return {ApiResponse} Reponse
+    #
+    # TODO: Wrong description in API?
     ###
     importdomainext: (params) ->
       query 'importdomainext', params
