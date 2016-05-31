@@ -43,6 +43,36 @@ querystring = require('querystring')
 ###
 
 ###*
+# @typedef WebHook
+# @property {integer} id  - ID
+# @property {string} name - WebHook Name
+# @property {string} key  - WebHook Key
+###
+
+###*
+# @typedef ApiDictionary
+# @property {string} name  - Name
+# @property {integer} value - Value
+###
+
+###*
+# @typedef ApiDateDictionary
+# @property {string} date   - Date
+# @property {integer} value - Value
+###
+
+###*
+# @typedef DomainLogDaily
+# @property {string} date_created   - DateTime
+# @property {integer} totel - Total Usage
+# @property {integer} eu - EU Usage
+# @property {integer} us - US Usage
+# @property {integer} sa - SA Usage
+# @property {integer} ap - AP Usage
+# @property {integer} af - AF Usage
+###
+
+###*
 # @typedef SecureKey
 # @property {integer} keytag   - Key tag
 # @property {string} key       - Key
@@ -283,6 +313,152 @@ rage4service = ->
         query 'createrecord2', params
       else
         query 'createrecord', params
+
+    ###*
+    # Update record
+    # @param {object} params
+    # @param {integer} params.id               - Records's's ID
+    # @param {string} params.name
+    # @param {string} params.content
+    # @param {integer} params.ttl
+    # @param {integer} params.priority
+    # @param {boolean} params.active
+    # @param {integer} params.geozone          -
+    # @param {boolean} params.geolock          -
+    # @param {double} params.geolat            -
+    # @param {double} params.geolong           -
+    # @param {booelan} params.failover         -
+    # @param {string} params.failovercontent   -
+    # @param {boolean} params.failoverwithdraw -
+    # @param {boolean} params.udplimit         -
+    # @param {boolean} selfResponse            - Self-Response
+    # @return {ApiResponse|Record} Response
+    ###
+    updaterecord: (params, selfResponse) ->
+      if (selfResponse)
+        query 'updaterecord2', params
+      else
+        query 'updaterecord', params
+
+    ###*
+    # Delete record
+    # @param {object}  params
+    # @param {integer}  params.id   - Record's ID
+    # @return {ApiResponse|Record} Response
+    ###
+    deleterecord: (params, selfResponse) ->
+      if (selfResponse)
+        query 'deleterecord2', params
+      else
+        query 'deleterecord', params
+
+    ###*
+    # Enable or disable record failover
+    # @param {object}  params
+    # @param {integer}  params.id     - Record's ID
+    # @param {boolean} params.active -
+    # @return {ApiResponse|Record} Response
+    ###
+    recordfailover: (params, selfResponse) ->
+      if (selfResponse)
+        query 'recordfailover2', params
+      else
+        query 'recordfailover', params
+
+    ###*
+    # Enable or disable record
+    # @param {object}  params
+    # @param {integer}  params.id     - Record's ID
+    # @return {ApiResponse|Record} Response
+    ###
+    togglerecord: (params, selfResponse) ->
+      if (selfResponse)
+        query 'togglerecord2', params
+      else
+        query 'togglerecord', params
+
+    ###*
+    # List Webhooks
+    # @return {Array.<WebHook>} Reponse
+    ###
+    getwebhooks: () ->
+      query 'getwebhooks'
+
+    ###*
+    # Get webhook by id
+    # @param {object}  params
+    # @param {integer}  params.id   - Webhook's ID
+    # @return {WebHook} Reponse
+    ###
+    getwebhook: (params) ->
+      query 'getwebhook', params
+
+    ###*
+    # Create new webhook
+    # @param {object}  params
+    # @param {integer}  params.name   - Webhook's name
+    # @return {ApiResponse} Reponse
+    ###
+    createwebhook: (params) ->
+      query 'createwebhook', params
+
+    ###*
+    # Delete webhook by id
+    # @param {object}  params
+    # @param {integer}  params.id   - Webhook's ID
+    # @return {ApiResponse} Reponse
+    ###
+    deletewebhook: (params) ->
+      query 'deletewebhook', params
+
+    ###*
+    # Attach webhook to record
+    # @param {object}  params
+    # @param {integer}  params.id   - Webhook's ID
+    # @return {ApiResponse} Reponse
+    ###
+    attachwebhook: (params) ->
+      query 'attachwebhook', params
+
+    ###*
+    # Detach webhook from record
+    # @param {object}  params
+    # @param {integer}  params.id   - Webhook's ID
+    # @return {ApiResponse} Reponse
+    ###
+    detachwebhook: (params) ->
+      query 'detachwebhook', params
+
+    ###*
+    # List supported record types
+    # @return {Array.<ApiDictionary>} Reponse
+    ###
+    listrecordtypes: () ->
+      query 'listrecordtypes'
+
+    ###*
+    # List supported geo regions
+    # @return {Array.<ApiDictionary>} Reponse
+    ###
+    listgeoregions: () ->
+      query 'listgeoregions'
+
+    ###*
+    # Show current usage (single zone)
+    # @param {object}  params
+    # @param {integer}  params.id   - Domains's ID
+    # @return {Array.<DomainLogDaily>} Reponse
+    ###
+    showcurrentusage: (params) ->
+      query 'showcurrentusage', params
+
+    ###*
+    # Show current global usage (all zones)
+    # @return {Array.<ApiDateDictionary>} Reponse
+    ###
+    showcurrentglobalusage: () ->
+      query 'showcurrentglobalusage'
+
   }
 
 module.exports = rage4service()
