@@ -3,12 +3,12 @@
   "description": "Promise-based communication with Rage4 API",
   "main": "./lib/index.js",
   "scripts": {
-    "compile": "./node_modules/coffee-script/bin/coffee --compile --bare --no-header --output lib/ src/index.coffee",
+    "compile": "coffee --compile --bare --no-header --output lib/ src/index.coffee",
     "pretest": "npm run compile",
     "test": "npm run lint && npm run mocha && npm run coverage",
-    "mocha": "./node_modules/mocha/bin/mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul ./test",
-    "coverage": "./node_modules/.bin/istanbul report",
-    "lint": "./node_modules/coffeelint/bin/coffeelint -r ./src ./test",
+    "mocha": "mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
+    "coverage": "istanbul report",
+    "lint": "coffeelint -r src test",
     "prepublish": "npm run compile",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
