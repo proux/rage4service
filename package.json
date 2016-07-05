@@ -37,8 +37,8 @@
     "coffee-script": "^1.10.0",
     "coffeelint": "^1.15.7",
     "cz-conventional-changelog": "^1.1.6",
-    "istanbul": "^0.4.4",
-    "mocha": "^2.4.5",
+    "istanbul": "^0.4.3",
+    "mocha": "^2.5.0",
     "nock": "^8.0.0",
     "semantic-release": "^4.3.5",
     "snyk": "^1.14.3"
