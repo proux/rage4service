@@ -1,3 +1,6 @@
 version: v1.5.0
 ignore: {}
-patch: {}
+patch:
+  'npm:minimatch:20160620':
+    - istanbul > fileset > minimatch:
+        patched: '2016-07-05T20:29:11.766Z'
