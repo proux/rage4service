@@ -9,8 +9,9 @@
     "mocha": "mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
     "coverage": "istanbul report",
     "lint": "coffeelint -r src test",
-    "prepublish": "npm run compile",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "prepublish": "npm run snyk-protect && npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "snyk-protect": "snyk protect"
   },
   "keywords": [
     "rage4",
@@ -27,7 +28,8 @@
     "fileset": "^1.0.1",
     "gaze": "^1.1.0",
     "istanbul": "^0.4.3",
-    "request-promise": "^3.0.0"
+    "request-promise": "^3.0.0",
+    "snyk": "1.16.0"
   },
   "devDependencies": {
     "@semantic-release/release-notes-generator": "^2.0.0",
@@ -40,8 +42,7 @@
     "istanbul": "^0.4.3",
     "mocha": "^2.5.0",
     "nock": "^8.0.0",
-    "semantic-release": "^4.3.5",
-    "snyk": "^1.14.3"
+    "semantic-release": "^4.3.5"
   },
   "config": {
     "commitizen": {
@@ -50,5 +51,6 @@
   },
   "release": {
     "generateNotes": "./node_modules/@semantic-release/release-notes-generator/dist"
-  }
+  },
+  "snyk": true
 }
