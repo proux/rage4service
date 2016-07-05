@@ -5,7 +5,7 @@
   "scripts": {
     "compile": "coffee --compile --bare --no-header --output lib/ src/index.coffee",
     "pretest": "npm run compile",
-    "test": "npm run lint && npm run mocha && npm run coverage",
+    "test": "snyk test && npm run lint && npm run mocha && npm run coverage",
     "mocha": "mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
     "coverage": "istanbul report",
     "lint": "coffeelint -r src test",
@@ -24,6 +24,9 @@
   "author": "Nico Lindemann <nico.lindemann@proux.net>",
   "license": "MIT",
   "dependencies": {
+    "fileset": "^1.0.1",
+    "gaze": "^0.4.0",
+    "istanbul": "^0.4.3",
     "request-promise": "^3.0.0"
   },
   "devDependencies": {
@@ -37,7 +40,8 @@
     "istanbul": "^0.4.4",
     "mocha": "^2.4.5",
     "nock": "^8.0.0",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "snyk": "^1.14.3"
   },
   "config": {
     "commitizen": {
