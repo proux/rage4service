@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "fileset": "^1.0.1",
-    "gaze": "^0.4.0",
+    "gaze": "^1.1.0",
     "istanbul": "^0.4.3",
     "request-promise": "^3.0.0"
   },
