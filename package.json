@@ -25,11 +25,7 @@
   "author": "Nico Lindemann <nico.lindemann@proux.net>",
   "license": "MIT",
   "dependencies": {
-    "fileset": "^1.0.1",
-    "gaze": "^1.1.0",
-    "istanbul": "^0.4.3",
-    "request-promise": "^3.0.0",
-    "snyk": "1.16.1"
+    "request-promise": "^3.0.0"
   },
   "devDependencies": {
     "@semantic-release/release-notes-generator": "^2.0.0",
