@@ -25,8 +25,9 @@ platform:
 # Get the stable version of node
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install -g npm
-  - npm install
+  - npm i -g npm
+  - npm i -g snyk
+  - npm i
 
 build: off
 
