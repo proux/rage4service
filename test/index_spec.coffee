@@ -1,5 +1,6 @@
 expect = require('chai').expect
-r4s = require('../src/')
+Rage4Service = require('../src/')
+r4s = new Rage4Service('TESTKEY')
 nock = require('nock')
 
 index = nock('https://secure.rage4.com/RAPI')
