@@ -205,8 +205,6 @@ rage4service = (username = process.env.RAGE4_USERNAME,
         # @param {string} params.nsname   - NS prefix
         # @param {string} params.nsprefix - NS suffix
         # @return {ApiResponse} Reponse
-        #
-        # TODO: Wrong description in API?
         ###
         importdomainext: (params) ->
           query 'importdomainext', params

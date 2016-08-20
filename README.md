@@ -31,10 +31,10 @@ Rage4service = require('rage4service');
 var r4s = new Rage4service("username", "password");
 ```
 ## Credentials
-The Rage4 API use your email adress as username and your API key as password. You can instantiate the **Rage4service** class without any credentials, in that case the environment variables `RAGE4_USERNAME` and `RAGE4_PASSWORD` are used. 
+The Rage4 API use your email adress as username and your API key as password. You can instantiate the **Rage4service** class without any credentials, in that case the environment variables `RAGE4_USERNAME` and `RAGE4_PASSWORD` are used.
 
 ## Methods
-All methods in the **Rage4service** class return promises. 
+All methods in the **Rage4service** class return promises.
 For more information on the various API endpoints (the corresponding method names are the same), see the [ API Documentation](https://gbshouse.uservoice.com/knowledgebase/articles/109834-rage4-dns-developers-api).
 
 An example:
@@ -43,7 +43,7 @@ r4s.getdomains().then(function(arrayOfAllDomains) {
     console.log(arrayOfAllDomains);
 });
 ```
-All methods, return values and parameters are documented in full [jsDoc](http://usejsdoc.org/) comments. 
+All methods, return values and parameters are documented in full [jsDoc](http://usejsdoc.org/) comments.
 
 ## Issues
 Feel free to open a github issue if you experience something odd.
@@ -51,7 +51,6 @@ Feel free to open a github issue if you experience something odd.
 > **Already known ambiguities:**
 
 > - `updatedomain`: Use of `nsname` and `nsprefix` is unclear. Issue [#27](/../../issues/27)
-> - `importdomainext`: Maybe a wrong description. [#26](/../../issues/26)
 
 ## License
 MIT
