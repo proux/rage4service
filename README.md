@@ -48,9 +48,5 @@ All methods, return values and parameters are documented in full [jsDoc](http://
 ## Issues
 Feel free to open a github issue if you experience something odd.
 
-> **Already known ambiguities:**
-
-> - `updatedomain`: Use of `nsname` and `nsprefix` is unclear. Issue [#27](/../../issues/27)
-
 ## License
 MIT

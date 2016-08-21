@@ -180,8 +180,6 @@ rage4service = (username = process.env.RAGE4_USERNAME,
         # @param {string} params.ns2        - Secondary NS name
         # @param {boolean} selfResponse     - Self-Response
         # @return {ApiResponse|Domain} Response
-        #
-        # TODO: nsname, nsprefix
         ###
         updatedomain: (params, selfResponse) ->
           if (selfResponse)
