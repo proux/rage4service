@@ -11,11 +11,7 @@ node_js:
 - '4'
 - '5'
 - '6'
-- iojs-v3
-- iojs-v2
-- iojs-v1
-- '0.12'
-- '0.10'
+- '7'
 before_install:
 - npm i -g npm@^2.0.0
 - npm i -g snyk
