@@ -5,13 +5,12 @@
   "scripts": {
     "compile": "coffee --compile --bare --no-header --output lib/ src/index.coffee",
     "pretest": "npm run compile",
-    "test": "snyk test && npm run lint && npm run mocha && npm run coverage",
+    "test": "npm run lint && npm run mocha && npm run coverage",
     "mocha": "mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
     "coverage": "istanbul report",
     "lint": "coffeelint -r src test",
-    "prepublish": "npm run snyk-protect && npm run compile",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "snyk-protect": "snyk protect"
+    "prepublish": "npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "rage4",
@@ -47,6 +46,5 @@
   },
   "release": {
     "generateNotes": "./node_modules/@semantic-release/release-notes-generator/dist"
-  },
-  "snyk": true
+  }
 }
