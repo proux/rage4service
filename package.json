@@ -30,7 +30,7 @@
     "@semantic-release/release-notes-generator": "^2.0.0",
     "chai": "^3.5.0",
     "codeclimate-test-reporter": "^0.4.1",
-    "coffee-coverage": "^1.0.1",
+    "coffee-coverage": "^2.0.1",
     "coffee-script": "^1.12.3",
     "coffeelint": "^1.16.0",
     "cz-conventional-changelog": "^2.0.0",
