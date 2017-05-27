@@ -2,13 +2,12 @@
   "name": "rage4service",
   "description": "Promise-based communication with Rage4 API",
   "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "compile": "coffee --compile --bare --no-header --output lib/ src/index.coffee",
-    "pretest": "npm run compile",
-    "test": "npm run lint && npm run mocha && npm run coverage",
-    "mocha": "mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
-    "coverage": "istanbul report",
-    "lint": "coffeelint -r src test",
+    "compile": "coffee --compile --bare --no-header --output lib/ src/",
+    "test": "coffeelint -r src test && jest",
     "prepublish": "npm run compile",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -28,20 +27,40 @@
   },
   "devDependencies": {
     "@semantic-release/release-notes-generator": "^2.0.0",
-    "chai": "^3.5.0",
+    "babel-runtime": "^6.23.0",
     "codeclimate-test-reporter": "^0.4.1",
-    "coffee-coverage": "^2.0.1",
     "coffee-script": "^1.12.3",
     "coffeelint": "^1.16.0",
     "cz-conventional-changelog": "^2.0.0",
-    "istanbul": "^0.4.3",
+    "jest": "^20.0.4",
+    "jest-coffee-preprocessor": "^1.0.0",
     "nock": "^9.0.13",
-    "mocha": "^3.2.0",
     "semantic-release": "^6.3.2"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "browser": true,
+    "collectCoverage": true,
+    "testMatch": [
+      "**/?(*.)(spec|test).coffee"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.c9"
+    ],
+    "mapCoverage": true,
+    "moduleFileExtensions": [
+      "coffee",
+      "litcoffee",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(coffee|litcoffee)$": "jest-coffee-preprocessor"
     }
   },
   "release": {

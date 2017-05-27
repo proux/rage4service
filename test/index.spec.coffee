@@ -1,5 +1,4 @@
-expect = require('chai').expect
-Rage4Service = require('../src/')
+Rage4Service = require('../src/index.coffee')
 r4s = new Rage4Service('TESTKEY')
 nock = require('nock')
 
@@ -245,160 +244,160 @@ showcurrentglobalusage = nock('https://secure.rage4.com/RAPI')
 
 it 'index method should trigger matching api call', ->
   r4s.index().then () ->
-    expect(index.isDone()).to.be.true
+    expect(index.isDone()).toBe(true)
 
 it 'getdomains method should trigger matching api call', ->
   r4s.getdomains().then () ->
-    expect(getdomains.isDone()).to.be.true
+    expect(getdomains.isDone()).toBe(true)
 
 it 'getdomain method should trigger matching api call', ->
   r4s.getdomain().then () ->
-    expect(getdomain.isDone()).to.be.true
+    expect(getdomain.isDone()).toBe(true)
 
 it 'getdomainbyname method should trigger matching api call', ->
   r4s.getdomainbyname().then () ->
-    expect(getdomainbyname.isDone()).to.be.true
+    expect(getdomainbyname.isDone()).toBe(true)
 
 it 'createregulardomain method should trigger matching api call', ->
   r4s.createregulardomain().then () ->
-    expect(createregulardomain.isDone()).to.be.true
+    expect(createregulardomain.isDone()).toBe(true)
 
 it 'createreversedomain4 method should trigger matching api call', ->
   r4s.createreversedomain4().then () ->
-    expect(createreversedomain4.isDone()).to.be.true
+    expect(createreversedomain4.isDone()).toBe(true)
 
 it 'createreversedomain6 method should trigger matching api call', ->
   r4s.createreversedomain6().then () ->
-    expect(createreversedomain6.isDone()).to.be.true
+    expect(createreversedomain6.isDone()).toBe(true)
 
 it 'deletedomain method should trigger matching api call', ->
   r4s.deletedomain().then () ->
-    expect(deletedomain.isDone()).to.be.true
+    expect(deletedomain.isDone()).toBe(true)
 
 it 'updatedomain method w/o selfresponse should trigger matching api call', ->
   r4s.updatedomain([], false).then () ->
-    expect(updatedomain.isDone()).to.be.true
+    expect(updatedomain.isDone()).toBe(true)
 
 it 'updatedomain method w/ selfresponse should trigger matching api call', ->
   r4s.updatedomain([], true).then () ->
-    expect(updatedomain2.isDone()).to.be.true
+    expect(updatedomain2.isDone()).toBe(true)
 
 it 'importdomain method should trigger matching api call', ->
   r4s.importdomain().then () ->
-    expect(importdomain.isDone()).to.be.true
+    expect(importdomain.isDone()).toBe(true)
 
 it 'importdomainext method should trigger matching api call', ->
   r4s.importdomainext().then () ->
-    expect(importdomainext.isDone()).to.be.true
+    expect(importdomainext.isDone()).toBe(true)
 
 it 'syncdomain method should trigger matching api call', ->
   r4s.syncdomain().then () ->
-    expect(syncdomain.isDone()).to.be.true
+    expect(syncdomain.isDone()).toBe(true)
 
 it 'syncslavedomain method should trigger matching api call', ->
   r4s.syncslavedomain().then () ->
-    expect(syncslavedomain.isDone()).to.be.true
+    expect(syncslavedomain.isDone()).toBe(true)
 
 it 'exportzonefile method should trigger matching api call', ->
   r4s.exportzonefile().then () ->
-    expect(exportzonefile.isDone()).to.be.true
+    expect(exportzonefile.isDone()).toBe(true)
 
 it 'getdnssecinfo method should trigger matching api call', ->
   r4s.getdnssecinfo().then () ->
-    expect(getdnssecinfo.isDone()).to.be.true
+    expect(getdnssecinfo.isDone()).toBe(true)
 
 it 'enablednssec method should trigger matching api call', ->
   r4s.enablednssec().then () ->
-    expect(enablednssec.isDone()).to.be.true
+    expect(enablednssec.isDone()).toBe(true)
 
 it 'disablednssec method should trigger matching api call', ->
   r4s.disablednssec().then () ->
-    expect(disablednssec.isDone()).to.be.true
+    expect(disablednssec.isDone()).toBe(true)
 
 it 'getrecords method should trigger matching api call', ->
   r4s.getrecords().then () ->
-    expect(getrecords.isDone()).to.be.true
+    expect(getrecords.isDone()).toBe(true)
 
 it 'getrecord method should trigger matching api call', ->
   r4s.getrecord().then () ->
-    expect(getrecord.isDone()).to.be.true
+    expect(getrecord.isDone()).toBe(true)
 
 it 'createrecord w/o selfresponse method should trigger matching api call', ->
   r4s.createrecord([], false).then () ->
-    expect(createrecord.isDone()).to.be.true
+    expect(createrecord.isDone()).toBe(true)
 
 it 'createrecord w/ selfresponse method should trigger matching api call', ->
   r4s.createrecord([], true).then () ->
-    expect(createrecord2.isDone()).to.be.true
+    expect(createrecord2.isDone()).toBe(true)
 
 it 'updaterecord w/o selfresponse method should trigger matching api call', ->
   r4s.updaterecord([], false).then () ->
-    expect(updaterecord.isDone()).to.be.true
+    expect(updaterecord.isDone()).toBe(true)
 
 it 'updaterecord w/ selfresponse method should trigger matching api call', ->
   r4s.updaterecord([], true).then () ->
-    expect(updaterecord2.isDone()).to.be.true
+    expect(updaterecord2.isDone()).toBe(true)
 
 it 'deleterecord w/o selfresponse method should trigger matching api call', ->
   r4s.deleterecord([], false).then () ->
-    expect(deleterecord.isDone()).to.be.true
+    expect(deleterecord.isDone()).toBe(true)
 
 it 'deleterecord w/ selfresponse method should trigger matching api call', ->
   r4s.deleterecord([], true).then () ->
-    expect(deleterecord2.isDone()).to.be.true
+    expect(deleterecord2.isDone()).toBe(true)
 
 it 'recordfailover w/o selfresponse method should trigger matching api call', ->
   r4s.recordfailover([], false).then () ->
-    expect(recordfailover.isDone()).to.be.true
+    expect(recordfailover.isDone()).toBe(true)
 
 it 'recordfailover w/ selfresponse method should trigger matching api call', ->
   r4s.recordfailover([], true).then () ->
-    expect(recordfailover2.isDone()).to.be.true
+    expect(recordfailover2.isDone()).toBe(true)
 
 it 'togglerecord w/o selfresponse method should trigger matching api call', ->
   r4s.togglerecord([], false).then () ->
-    expect(togglerecord.isDone()).to.be.true
+    expect(togglerecord.isDone()).toBe(true)
 
 it 'togglerecord w/ selfresponse method should trigger matching api call', ->
   r4s.togglerecord([], true).then () ->
-    expect(togglerecord2.isDone()).to.be.true
+    expect(togglerecord2.isDone()).toBe(true)
 
 it 'getwebhooks method should trigger matching api call', ->
   r4s.getwebhooks().then () ->
-    expect(getwebhooks.isDone()).to.be.true
+    expect(getwebhooks.isDone()).toBe(true)
 
 it 'getwebhook method should trigger matching api call', ->
   r4s.getwebhook().then () ->
-    expect(getwebhook.isDone()).to.be.true
+    expect(getwebhook.isDone()).toBe(true)
 
 it 'createwebhook method should trigger matching api call', ->
   r4s.createwebhook().then () ->
-    expect(createwebhook.isDone()).to.be.true
+    expect(createwebhook.isDone()).toBe(true)
 
 it 'deletewebhook method should trigger matching api call', ->
   r4s.deletewebhook().then () ->
-    expect(deletewebhook.isDone()).to.be.true
+    expect(deletewebhook.isDone()).toBe(true)
 
 it 'attachwebhook method should trigger matching api call', ->
   r4s.attachwebhook().then () ->
-    expect(attachwebhook.isDone()).to.be.true
+    expect(attachwebhook.isDone()).toBe(true)
 
 it 'detachwebhook method should trigger matching api call', ->
   r4s.detachwebhook().then () ->
-    expect(detachwebhook.isDone()).to.be.true
+    expect(detachwebhook.isDone()).toBe(true)
 
 it 'listrecordtypes method should trigger matching api call', ->
   r4s.listrecordtypes().then () ->
-    expect(listrecordtypes.isDone()).to.be.true
+    expect(listrecordtypes.isDone()).toBe(true)
 
 it 'listgeoregions method should trigger matching api call', ->
   r4s.listgeoregions().then () ->
-    expect(listgeoregions.isDone()).to.be.true
+    expect(listgeoregions.isDone()).toBe(true)
 
 it 'showcurrentusage method should trigger matching api call', ->
   r4s.showcurrentusage().then () ->
-    expect(showcurrentusage.isDone()).to.be.true
+    expect(showcurrentusage.isDone()).toBe(true)
 
 it 'showcurrentglobalusage method should trigger matching api call', ->
   r4s.showcurrentglobalusage().then () ->
-    expect(showcurrentglobalusage.isDone()).to.be.true
+    expect(showcurrentglobalusage.isDone()).toBe(true)
