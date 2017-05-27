@@ -20,7 +20,7 @@ The library is available on [npm](https://www.npmjs.com/package/rage4service).
 Install the module with:
 
 ```sh
-npm install rage4service --save
+npm install rage4service
 ```
 
 ## Usage
