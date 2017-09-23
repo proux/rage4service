@@ -23,7 +23,7 @@
   "author": "Nico Lindemann <nico.lindemann@proux.net>",
   "license": "MIT",
   "dependencies": {
-    "request-promise": "^4.2.1"
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "@semantic-release/release-notes-generator": "^4.0.0",
