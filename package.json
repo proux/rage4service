@@ -34,7 +34,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "jest": "^21.2.1",
     "jest-coffee-preprocessor": "^1.0.0",
-    "nock": "^9.0.21",
+    "nock": "^9.0.22",
     "semantic-release": "^8.0.3"
   },
   "config": {
