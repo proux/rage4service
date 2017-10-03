@@ -9,10 +9,9 @@ version: "{build}"
 # what combinations to test
 environment:
   matrix:
-    - nodejs_version: "4"
-    - nodejs_version: "5"
     - nodejs_version: "6"
     - nodejs_version: "7"
+    - nodejs_version: "8"
   RAGE4_USERNAME: test@rage4service
   RAGE4_PASSWORD: somepassword
 
