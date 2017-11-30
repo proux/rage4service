@@ -29,7 +29,7 @@
     "@semantic-release/release-notes-generator": "^5.0.2",
     "babel-runtime": "^6.25.0",
     "codeclimate-test-reporter": "^0.5.0",
-    "coffee-script": "^1.12.3",
+    "coffee-script": "^1.12.8",
     "coffeelint": "^2.0.3",
     "cz-conventional-changelog": "^2.0.0",
     "jest": "^21.2.1",
