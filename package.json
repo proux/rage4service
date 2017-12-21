@@ -25,20 +25,20 @@
   "author": "Nico Lindemann <nico.lindemann@proux.net>",
   "license": "MIT",
   "dependencies": {
-    "request-promise": "^4.0.0"
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "@semantic-release/release-notes-generator": "^2.0.0",
-    "chai": "^3.5.0",
-    "codeclimate-test-reporter": "^0.3.3",
-    "coffee-coverage": "^1.0.1",
-    "coffee-script": "^1.10.0",
-    "coffeelint": "^1.15.7",
-    "cz-conventional-changelog": "^1.1.6",
-    "istanbul": "^0.4.3",
-    "mocha": "^3.0.2",
-    "nock": "^8.0.0",
-    "semantic-release": "^4.3.5"
+    "@semantic-release/release-notes-generator": "^6.0.3",
+    "chai": "^4.1.2",
+    "codeclimate-test-reporter": "^0.5.0",
+    "coffee-coverage": "^3.0.0",
+    "coffee-script": "^1.12.7",
+    "coffeelint": "^2.0.7",
+    "cz-conventional-changelog": "^2.1.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "nock": "^9.1.5",
+    "semantic-release": "^8.2.3"
   },
   "config": {
     "commitizen": {
