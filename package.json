@@ -32,7 +32,7 @@
     "coffee-script": "^1.12.3",
     "coffeelint": "^2.0.3",
     "cz-conventional-changelog": "^2.0.0",
-    "jest": "^22.1.1",
+    "jest": "^22.1.4",
     "jest-coffee-preprocessor": "^1.0.0",
     "nock": "^9.1.6",
     "semantic-release": "^12.4.0"
