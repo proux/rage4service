@@ -35,7 +35,7 @@
     "jest": "^22.1.4",
     "jest-coffee-preprocessor": "^1.0.0",
     "nock": "^9.3.3",
-    "semantic-release": "^15.5.4"
+    "semantic-release": "^15.6.0"
   },
   "config": {
     "commitizen": {
