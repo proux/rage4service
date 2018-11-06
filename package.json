@@ -26,7 +26,7 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "@semantic-release/release-notes-generator": "^7.0.0",
+    "@semantic-release/release-notes-generator": "^7.1.4",
     "babel-runtime": "^6.25.0",
     "codeclimate-test-reporter": "^0.5.0",
     "coffee-script": "^1.12.3",
