@@ -46,6 +46,7 @@
     "verbose": true,
     "browser": true,
     "collectCoverage": true,
+    "testURL": "http://localhost",
     "testMatch": [
       "**/?(*.)(spec|test).coffee"
     ],
