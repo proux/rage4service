@@ -46,6 +46,7 @@
     "verbose": true,
     "browser": true,
     "collectCoverage": true,
+    "testURL": "http://localhost",
     "testMatch": [
       "**/?(*.)(spec|test).coffee"
     ],
@@ -53,7 +54,6 @@
       "/node_modules/",
       "/.c9"
     ],
-    "mapCoverage": true,
     "moduleFileExtensions": [
       "coffee",
       "litcoffee",
